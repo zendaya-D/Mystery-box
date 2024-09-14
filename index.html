@@ -25920,23 +25920,28 @@ TRY YOUR LUCK ! 🚀
                                   "
                                 >
                                   <li class="tw-my-0 tw-text-sm minted-details">
-                                    0xya5e0....pfc 06 Sept 2024 minted
+                                    0xya5e0....pfc
+                                    <span class="date"></span> minted
                                     <span class="timeSec">17 sec ago</span>
                                   </li>
                                   <li class="tw-my-0 tw-text-sm minted-details">
-                                    0xnnesl....nvi 06 Sept 2024 minted
+                                    0xnnesl....nvi
+                                    <span class="date"></span> minted
                                     <span class="timeSec">39 sec ago</span>
                                   </li>
                                   <li class="tw-my-0 tw-text-sm minted-details">
-                                    0xbke6r....74h 06 Sept 2024 minted
+                                    0xbke6r....74h
+                                    <span class="date"></span> minted
                                     <span class="timeSec">59 sec ago</span>
                                   </li>
                                   <li class="tw-my-0 tw-text-sm minted-details">
-                                    0x318dq....6m9 06 Sept 2024 minted
+                                    0x318dq....6m9
+                                    <span class="date"></span> minted
                                     <span class="timeSec">78 sec ago</span>
                                   </li>
                                   <li class="tw-my-0 tw-text-sm minted-details">
-                                    0xcpwef....19l 06 Sept 2024 minted
+                                    0xcpwef....19l
+                                    <span class="date"></span> minted
                                     <span class="timeSec">81 sec ago</span>
                                   </li>
                                 </ul>
@@ -26280,6 +26285,37 @@ TRY YOUR LUCK ! 🚀
           };
         }
       })();
+    </script>
+    <script>
+      function getFormattedDate() {
+        const months = [
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr",
+          "May",
+          "Jun",
+          "Jul",
+          "Aug",
+          "Sept",
+          "Oct",
+          "Nov",
+          "Dec",
+        ];
+        const today = new Date();
+        const day = today.getDate();
+        const month = months[today.getMonth()];
+        const year = today.getFullYear();
+        return `${day} ${month} ${year}`;
+      }
+
+      window.onload = function () {
+        const dateElements = document.querySelectorAll(".date");
+        const currentDate = getFormattedDate();
+        dateElements.forEach(function (element) {
+          element.innerHTML = currentDate;
+        });
+      };
     </script>
   </body>
 </html>
